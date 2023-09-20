@@ -10,11 +10,13 @@ public class Player : MonoBehaviour
     //private float playerInputVertical;
 
     private Rigidbody2D rBody2D; 
+    private GroundSensor sensor;
 
     // Start is called before the first frame update
     void Start()
     {
         rBody2D = GetComponent<Rigidbody2D>();
+        sensor = GetComponentInChildren<GroundSensor>();
     }
 
     // Update is called once per frame
@@ -22,7 +24,7 @@ public class Player : MonoBehaviour
     {
        PlayerMovement();
 
-       if(Input.GetButtonDown("Jump"))
+       if(Input.GetButtonDown("Jump") && sensor.isGrounded)
        {
             Jump();
        }
