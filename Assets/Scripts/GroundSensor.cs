@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class GroundSensor : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public bool isGrounded;
+    
+    void OnTriggerEnterd2D(Collider2D other)
     {
-        
+        if(other.gameObject.layer == 3)
+        {
+            isGrounded = true;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerExit2D(Collider2D other)
     {
-        
+        if(other.gameObject.layer == 3)
+        {
+            isGrounded = false;
+        }
+    }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if(other.gameObject.layer == 3)
+        {
+            isGrounded = true;
+        }
     }
 }
