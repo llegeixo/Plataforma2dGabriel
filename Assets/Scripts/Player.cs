@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rBody2D; 
     private GroundSensor sensor;
     public Animator animator;
+    SpriteRenderer sRenderer;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,8 @@ public class Player : MonoBehaviour
         rBody2D = GetComponent<Rigidbody2D>();
         sensor = GetComponentInChildren<GroundSensor>();
         animator = GetComponentInChildren<Animator>();
+        sRenderer = GetComponent<SpriteRenderer>();
+        
     }
 
     // Update is called once per frame
@@ -49,15 +52,26 @@ public class Player : MonoBehaviour
     {
         playerInputHorizontal= Input.GetAxis("Horizontal");
 
-        if(playerInputHorizontal != 0)
-        {
-            animator.SetBool("IsRunning", true);
-        }
 
-        if(playerInputHorizontal == 0)
-        {
-            animator.SetBool("IsRunning", false);
-        }
+        if(playerInputHorizontal < 0)
+            {
+                
+                transform.rotation = Quaternion.Euler(0, 180, 0);
+                anim.SetBool("IsRunning", true);
+            }
+            else if(playerInputHorizontal > 0)
+            {
+                //spriteRenderer.flipX = false;
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+                anim.SetBool("IsRunning", true);
+            }
+            else
+            {
+                anim.SetBool("IsRunning", false);
+
+            }
+
+        
         /*playerInput2 = Input.GetAxis("Vertical");
         
         transform.Translate(new Vector2(playerInput, playerInput2) * playerSpeed * Time.deltaTime);*/
