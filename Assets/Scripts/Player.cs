@@ -57,17 +57,17 @@ public class Player : MonoBehaviour
             {
                 
                 transform.rotation = Quaternion.Euler(0, 180, 0);
-                anim.SetBool("IsRunning", true);
+                animator.SetBool("IsRunning", true);
             }
             else if(playerInputHorizontal > 0)
             {
                 //spriteRenderer.flipX = false;
                 transform.rotation = Quaternion.Euler(0, 0, 0);
-                anim.SetBool("IsRunning", true);
+                animator.SetBool("IsRunning", true);
             }
             else
             {
-                anim.SetBool("IsRunning", false);
+                animator.SetBool("IsRunning", false);
 
             }
 
