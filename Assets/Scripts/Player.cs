@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D rBody2D; 
     private GroundSensor sensor;
-    private Animator animator;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +32,10 @@ public class Player : MonoBehaviour
        if(Input.GetButtonDown("Jump") && sensor.isGrounded)
        {
             Jump();
+            animator.SetBool("IsJumping", true);
        }
+
+
     }
 
     void FixedUpdate()
@@ -62,6 +65,8 @@ public class Player : MonoBehaviour
 
     void Jump()
     {
-         rBody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        rBody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+
+        
     }
 }
