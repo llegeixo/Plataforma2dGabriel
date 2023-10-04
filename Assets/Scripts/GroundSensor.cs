@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GroundSensor : MonoBehaviour
 {
-    public bool isGrounded;
+    public static bool isGrounded;
     public Animator animator;
 
     void Start()

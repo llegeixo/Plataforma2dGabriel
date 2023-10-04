@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     //private float playerInputVertical;
 
     private Rigidbody2D rBody2D; 
-    private GroundSensor sensor;
+    //private GroundSensor sensor;
     public Animator animator;
     SpriteRenderer sRenderer;
 
@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         rBody2D = GetComponent<Rigidbody2D>();
-        sensor = GetComponentInChildren<GroundSensor>();
+        //sensor = GetComponentInChildren<GroundSensor>();
         animator = GetComponentInChildren<Animator>();
         sRenderer = GetComponent<SpriteRenderer>();
         
@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
     {
        PlayerMovement();
 
-       if(Input.GetButtonDown("Jump") && sensor.isGrounded)
+       if(Input.GetButtonDown("Jump") && GroundSensor.isGrounded)
        {
             Jump();
             animator.SetBool("IsJumping", true);
