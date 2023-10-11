@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D rBody2D; 
     //private GroundSensor sensor;
-    public Animator animator;
+    [SerializeField] private Animator animator;
     SpriteRenderer sRenderer;
 
     // Start is called before the first frame update
@@ -22,7 +22,6 @@ public class Player : MonoBehaviour
     {
         rBody2D = GetComponent<Rigidbody2D>();
         //sensor = GetComponentInChildren<GroundSensor>();
-        animator = GetComponentInChildren<Animator>();
         sRenderer = GetComponent<SpriteRenderer>();
         
     }
