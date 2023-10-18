@@ -89,4 +89,9 @@ public class Player : MonoBehaviour
 
         
     }
+
+    public void SignalTest()
+    {
+        Debug.Log("Señal recibida");
+    }
 }

@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 20455040}
   - component: {fileID: 20455041}
   - component: {fileID: 20455042}
+  - component: {fileID: 20455043}
   m_Layer: 0
   m_Name: Personaje
   m_TagString: Untagged
@@ -259,6 +260,36 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &20455043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20455037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 78f11be3c47696a4bbd60cd381727885, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 20455040}
+          m_TargetAssemblyTypeName: Player, Assembly-CSharp
+          m_MethodName: SignalTest
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &26460200
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,6 +419,37 @@ Transform:
   - {fileID: 1500456467}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &344859698
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 344859699}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &344859699
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344859698}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &595239168
 GameObject:
   m_ObjectHideFlags: 3
@@ -487,6 +549,7 @@ GameObject:
   - component: {fileID: 774556512}
   - component: {fileID: 774556513}
   - component: {fileID: 774556514}
+  - component: {fileID: 774556515}
   m_Layer: 0
   m_Name: rogue
   m_TagString: Untagged
@@ -582,6 +645,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &774556515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774556511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75336cbd58039004ab5680df8f18197e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &835476858
 GameObject:
   m_ObjectHideFlags: 0
@@ -5630,6 +5705,8 @@ PlayableDirector:
     value: {fileID: 1906942284}
   - key: {fileID: -6327952074507251916, guid: f83600a8337c9bc4a86801e055ff4c05, type: 2}
     value: {fileID: 835476859}
+  - key: {fileID: -4326468597608178259, guid: f83600a8337c9bc4a86801e055ff4c05, type: 2}
+    value: {fileID: 20455043}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1683369841
@@ -5842,3 +5919,4 @@ SceneRoots:
   - {fileID: 1683369841}
   - {fileID: 1906942287}
   - {fileID: 835476860}
+  - {fileID: 344859699}
