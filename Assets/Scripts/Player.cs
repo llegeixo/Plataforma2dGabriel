@@ -19,6 +19,10 @@ public class Player : MonoBehaviour
     SpriteRenderer sRenderer;
     [SerializeField] private PlayableDirector _director;
 
+    [SerializeField]AudioSource sfxAudioSource;
+
+    [SerializeField]private AudioClip jumpSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +31,8 @@ public class Player : MonoBehaviour
         sRenderer = GetComponent<SpriteRenderer>();
         
         Debug.Log(GameManager.instance.vidas);
+
+        sfxAudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -88,7 +94,7 @@ public class Player : MonoBehaviour
     {
         rBody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 
-        
+        sfxAudioSource.PlayOneShot(jumpSound);
     }
 
     public void SignalTest()
