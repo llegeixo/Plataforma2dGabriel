@@ -23,6 +23,8 @@ public class Player : MonoBehaviour
 
     [SerializeField]private AudioClip jumpSound;
 
+    MenuManager _menuManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +35,8 @@ public class Player : MonoBehaviour
         Debug.Log(GameManager.instance.vidas);
 
         sfxAudioSource = GetComponent<AudioSource>();
+
+        _menuManager = GameObject.Find("MenuManager").GetComponent<MenuManager>();
     }
 
     // Update is called once per frame
@@ -102,12 +106,12 @@ public class Player : MonoBehaviour
         Debug.Log("Señal recibida");
     }
 
-    void OnTriggerEnter2D(Collider2D collider)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collider.gameObject.layer == 6)
-        {
-            GameManager.instance.GameOver();    
+        if(collision.gameObject.CompareTag("DeathZone"))
+        {    
             SoundManager.instance.DeathSound();
+            _menuManager.Lose();
         }
         
     }

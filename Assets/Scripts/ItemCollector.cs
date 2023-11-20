@@ -24,7 +24,7 @@ public class ItemCollector : MonoBehaviour
         {
             Destroy(collision.gameObject);
             stars++;
-            starsText.text = "x " + stars;
+            starsText.text = stars + " / 6";
             sfxAudioSource.PlayOneShot(starPicked);
         }
     }

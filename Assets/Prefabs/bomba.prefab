@@ -10,11 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6057035162563379905}
   - component: {fileID: 5756104417331566122}
+  - component: {fileID: 4160784361325820735}
   - component: {fileID: 7914111592897923992}
   - component: {fileID: 6172192843712385075}
   m_Layer: 0
   m_Name: bomba
-  m_TagString: Untagged
+  m_TagString: Bomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,9 +28,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7598850584320370814}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.776, y: -2.625, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.804, y: -0.396, z: 0.33043674}
+  m_LocalScale: {x: 1.4331, y: 1.4331, z: 1.4331}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -86,6 +87,30 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4160784361325820735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7598850584320370814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c74c75ec49d9dc49b2dad4c7e369e84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _explosionSprites:
+  - {fileID: 21300000, guid: d1e2ea6e1a1b4844689502eaed09dc26, type: 3}
+  - {fileID: 21300000, guid: 50e94e11d2228674b867952e0be7be89, type: 3}
+  - {fileID: 21300000, guid: 9c236006bdaff634da1c947ef98c7305, type: 3}
+  - {fileID: 21300000, guid: aa47630722417f344bafbb4ab314f7a4, type: 3}
+  - {fileID: 21300000, guid: 7c26f94f936233f41bbaeeb9bfc1e856, type: 3}
+  - {fileID: 21300000, guid: c9f84f613fb14ec40a737ba583f2f49b, type: 3}
+  - {fileID: 21300000, guid: 1297e0b2293b21b4ca2e367ad638e009, type: 3}
+  - {fileID: 21300000, guid: a7f7408bd12296841960bd1c06356800, type: 3}
+  _bombExploded: {fileID: 8300000, guid: 695c5c0639d6a164881965ee8f2cbd65, type: 3}
+  _explosionDuration: 1
+  animator: {fileID: 6172192843712385075}
 --- !u!58 &7914111592897923992
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -118,9 +143,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00011718273, y: -0.060121655}
+  m_Offset: {x: -0.006019171, y: -0.08500281}
   serializedVersion: 2
-  m_Radius: 0.16962922
+  m_Radius: 0.14682992
 --- !u!95 &6172192843712385075
 Animator:
   serializedVersion: 5
@@ -131,7 +156,7 @@ Animator:
   m_GameObject: {fileID: 7598850584320370814}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2f58e784147a68d448f30686012eb37b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6bd2280cd8122144fbd4bbb597eb838a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
