@@ -15,36 +15,40 @@ public class Bomb : MonoBehaviour
 
     private SpriteRenderer _spriteRenderer;
 
+    private bool _bombDamaged = false;
+
     void Start()
     {
         _healthScript = GameObject.Find("Personaje").GetComponent<Health>();
         _sfxAudioSource = GetComponent<AudioSource>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+
+        animator = GetComponent<Animator>();
     }
 
     
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Bomb"))
+        if(collision.gameObject.CompareTag("Player") && _bombDamaged == false)
         {
             _sfxAudioSource.PlayOneShot(_bombExploded);
-            _healthScript._health = -1;
+            _healthScript._health -= 1;
             StartCoroutine(PlayExplosionAnimation());
-            Destroy(gameObject, _explosionDuration);
+            _bombDamaged = true;
         }
     }
 
     IEnumerator PlayExplosionAnimation()
-    {
-        
-        GetComponent<Collider>().enabled = false;
-
+    {   
         foreach (Sprite sprite in _explosionSprites)
         {
             _spriteRenderer.sprite = sprite;
+            
+        
             yield return new WaitForSeconds(_explosionDuration / _explosionSprites.Length);
+            //animator.SetBool("is exploded", true);
         }
         
-        GetComponent<Collider>().enabled = true;
+        Destroy(gameObject, _explosionDuration);
     }
 }
