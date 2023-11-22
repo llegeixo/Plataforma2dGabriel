@@ -9,10 +9,9 @@ public class Bomb : MonoBehaviour
     AudioSource _sfxAudioSource;
     public Sprite[] _explosionSprites;
     [SerializeField]private AudioClip _bombExploded;
-    public float _explosionDuration = 1.0f;
+    public float _explosionDuration = 0.2f;
 
-    [SerializeField] private Animator animator;
-
+    
     private SpriteRenderer _spriteRenderer;
 
     private bool _bombDamaged = false;
@@ -22,8 +21,6 @@ public class Bomb : MonoBehaviour
         _healthScript = GameObject.Find("Personaje").GetComponent<Health>();
         _sfxAudioSource = GetComponent<AudioSource>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
-
-        animator = GetComponent<Animator>();
     }
 
     
@@ -43,8 +40,6 @@ public class Bomb : MonoBehaviour
         foreach (Sprite sprite in _explosionSprites)
         {
             _spriteRenderer.sprite = sprite;
-            
-        
             yield return new WaitForSeconds(_explosionDuration / _explosionSprites.Length);
             //animator.SetBool("is exploded", true);
         }
